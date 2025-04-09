@@ -1,7 +1,7 @@
 <?php
 function store($fileDestination)
 {
-    $fileName = "image.txt";
+    $fileName = "db.txt";
     $file = fopen($fileName, "a+");
     fwrite($file, $fileDestination . "\n");
 

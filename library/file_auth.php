@@ -34,9 +34,8 @@ if (isset($_POST['submit'])) {
 
     //check if the file is allowed to be uploaded inside the file
 
+
     //inside the inarray first we first of all tell what the varable we want to check
-
-
     if (in_array($fileActualExt, $allowed)) {
         //inside the inarray first we first of all tell what the varable we want to check
 
@@ -52,8 +51,8 @@ if (isset($_POST['submit'])) {
                 //create a unic id to avoid the file name repeating the same
                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                 //a uniq time formart in macro secos
-                //create a unic id to avoid the file name repeating the same
 
+                //create a unic id to avoid the file name repeating the same
                 //were we want to upload the file
                 $fileDestination = 'uploads/' . $fileNameNew;
                 //were we want to upload the file
@@ -70,7 +69,7 @@ if (isset($_POST['submit'])) {
                 //add the file  if  with a modal a+ if there is no erro
 
                 echo 'upload successful upload';
-                
+
             } else {
                 echo " your file is too big";
             }
