@@ -38,11 +38,11 @@ class signUpController{
             $confirmPassword = $userDetails['confirm-password'];
             $level = $userDetails['level'];
             if($this->isAlphabets($userDetails)){
-                
+                $userModel = new userModel();
 
                 if(is_string($matricNo)){
                     if(is_numeric($level)){
-                        if(filter_var($userDetails['email'],FILTER_VALIDATE_EMAIL)){
+                        if(filter_var($userDetails['email'],FILTER_VALIDATE_EMAIL) && $userModel->detailExist($userDetails['email'],$matricNo)){
                             if(!empty($password)){
                                 if($password == $confirmPassword){
                                     return true;

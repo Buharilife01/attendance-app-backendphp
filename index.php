@@ -9,17 +9,19 @@ try{
         'last-name' => 'innocent',
         'first-name' => 'ebuka',
         'department' => 'polymer',
-        'email' => 'ichukwuea26@gmail.com',
+        'email' => 'ichukwuea6@gmail.com',
         'level' => 100,
-        'matric-no' => '23ddkkd',
+        'matric-no' => '23dkkd',
         'password' => '12222',
         'confirm-password' => '12222'
     ];
-    $test = new SignUpController();
+    $test = new userController();
     
     echo $test->signup($userDetails);
 
 } catch(Exception $e){
     $error = $e->getMessage();
-    echo $error;
+
+    echo json_encode(['message' => $error,'status' => 'unsuccessfull']);
+    
 }

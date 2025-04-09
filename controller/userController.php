@@ -3,6 +3,11 @@ class userController{
     public function signup($userDetails)
     {
         $signUp = new SignUpController();
-        $signUp->signup($userDetails);
+        if($signUp->signup($userDetails)){
+            $upload = new userModel();
+            if($upload->signupUpload($userDetails)){
+                return "successfully sign up";
+            }
+        }
     }
 }
