@@ -1,3 +1,4 @@
 <?php
 
-echo "Attendance Management System";
+header("Access-contol-Allow-origin: *");
+header("accepts: Applications/JSON");
