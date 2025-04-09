@@ -1,7 +1,7 @@
 <?php
 class DbConfig{
-    protected $hostame = "";
-    protected $username = "";
-    protected $password = "";
-    protected $database = "";
+    protected $hostname = 'localhost';
+    protected $username = 'root';
+    protected $password = '';
+    protected $database = 'attendance_management_project';
 }
