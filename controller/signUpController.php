@@ -45,7 +45,7 @@ class signUpController{
                         if(filter_var($userDetails['email'],FILTER_VALIDATE_EMAIL)){
                             if(!empty($password)){
                                 if($password == $confirmPassword){
-                                    return "we are good to go";
+                                    return true;
                                 } else{
                                     throw new Exception("password does not match");
                                 }
