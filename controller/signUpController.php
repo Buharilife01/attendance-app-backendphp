@@ -32,7 +32,7 @@ class signUpController{
 
     public function signup(array $userDetails)
     {
-        // if($this->requestMethod()){
+        if($this->requestMethod()){
             $matricNo = trim($userDetails['matric-no']);
             $password = $userDetails['password'];
             $confirmPassword = $userDetails['confirm-password'];
@@ -62,7 +62,7 @@ class signUpController{
                 
                 
             }
-        // }
+        }
     }
     
 }
