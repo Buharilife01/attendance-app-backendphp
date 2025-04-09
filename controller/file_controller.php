@@ -2,7 +2,10 @@
 <?php
 
 
-if (isset($_POST['submit'])) {
+// if (isset($_POST['submit'])) {
+
+
+
     // file name from storephoto.php 
     $file = $_FILES['file'];
     // file name from storephoto.php  
@@ -80,7 +83,7 @@ if (isset($_POST['submit'])) {
     } else {
         echo 'you cannot upload files of this type !';
     }
-}
+// }
 
 
 
