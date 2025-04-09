@@ -64,8 +64,9 @@ if (isset($_POST['submit'])) {
                 // 
                 //add the file  if  with a modal a+ if there is no erro
 
-                include "writeToFile.php";
-                store($fileDestination);
+                // include "writeToFile.php";
+                // store($fileDestination);
+                
                 //add the file  if  with a modal a+ if there is no erro
 
                 echo 'upload successful upload';
