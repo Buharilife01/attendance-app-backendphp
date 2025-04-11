@@ -40,8 +40,9 @@ class signUpController{
             if($this->isAlphabets($userDetails)){
                 $userModel = new userModel();
 
-                if(is_string($matricNo)){
-                    if(is_numeric($level)){
+                if(is_string($matricNo)){   //Check matric number
+                    if(is_numeric($level)){     //Check level
+                        //Checks if email is in a valid format and if the email or matric number is in the database
                         if(filter_var($userDetails['email'],FILTER_VALIDATE_EMAIL) && $userModel->detailExist($userDetails['email'],$matricNo)){
                             if(!empty($password)){
                                 if($password == $confirmPassword){
