@@ -1,5 +1,5 @@
 <?php
-class userModel extends DbConnection{
+class UserModel extends DbConnection{
 
     private $conn;
 

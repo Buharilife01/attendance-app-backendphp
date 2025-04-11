@@ -1,6 +1,6 @@
 <?php
 
-class signUpController{
+class SignUpController{
     private function requestMethod()    //checks request method to be post
     {
         if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -38,7 +38,7 @@ class signUpController{
             $confirmPassword = $userDetails['confirm-password'];
             $level = $userDetails['level'];
             if($this->isAlphabets($userDetails)){
-                $userModel = new userModel();
+                $userModel = new UserModel();
 
                 if(is_string($matricNo)){   //Check matric number
                     if(is_numeric($level)){     //Check level
@@ -46,7 +46,7 @@ class signUpController{
                         if(filter_var($userDetails['email'],FILTER_VALIDATE_EMAIL) && $userModel->detailExist($userDetails['email'],$matricNo)){
                             if(!empty($password)){
                                 if($password == $confirmPassword){
-                                    $file = new filecontroller();
+                                    $file = new FileController();
                                     if($file->checkfile()){
                                         $location = __DIR__."/../views/images/";
                                         // var_dump($this->checkfile());

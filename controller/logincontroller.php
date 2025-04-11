@@ -1,15 +1,25 @@
 <?php
 
-class logincontroller
+class Logincontroller
 {
     public function loginvalidator($username, $password)
     {
-        $setname = "admin";
-        $setpassword = "pass";
-        if ($username == $setname && $password == $setpassword) {
-            echo "correct";
-        } else {
-            echo "incorrect";
+      
+
+      
+        if(!empty($username)){
+            if(!empty($password)){
+                $loginDetails = new LoginModel();
+
+                if($loginDetails->loginDetails($username,$password)){
+                    echo json_encode(["status" => true]);
+                }
+
+            } else{
+                throw new Exception ("invalid email or password");  //checks if password is empty
+            }
+        } else{
+            throw new Exception ("invalid email or password");   //checks if username is empty
         }
     }
 

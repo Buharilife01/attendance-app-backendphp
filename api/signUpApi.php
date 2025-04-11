@@ -2,16 +2,16 @@
 require(__DIR__."/../index.php");
 try{
     $userDetails = [
-        'last-name' => $_POST['last-name'],
-        'first-name' => $_POST['first-name'],
-        'department' => $_POST['department'],
-        'email' => $_POST['email'],
-        'level' => $_POST['level'],
-        'matric-no' => $_POST['matric-no'],
-        'password' => $_POST['password'],
-        'confirm-password' => $_POST['confirm-password']
+        'last-name' => $_POST['last-name']?? null,
+        'first-name' => $_POST['first-name']?? null,
+        'department' => $_POST['department']?? null,
+        'email' => $_POST['email']?? null,
+        'level' => $_POST['level']?? null,
+        'matric-no' => $_POST['matric-no']?? null,
+        'password' => $_POST['password']?? null,
+        'confirm-password' => $_POST['confirm-password']?? null
     ];
-    $test = new userController();
+    $test = new UserController();
     
     echo $test->signup($userDetails,$imageFile);
 

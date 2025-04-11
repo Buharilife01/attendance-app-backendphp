@@ -1,6 +1,6 @@
 <?php
 // include(__DIR__."/../views/images");
-class filecontroller{
+class FileController{
     public function checkfile()
     {
         $imageName = $_FILES['user-image']['name'];
