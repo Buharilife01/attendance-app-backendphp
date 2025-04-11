@@ -45,7 +45,19 @@ class signUpController{
                         if(filter_var($userDetails['email'],FILTER_VALIDATE_EMAIL) && $userModel->detailExist($userDetails['email'],$matricNo)){
                             if(!empty($password)){
                                 if($password == $confirmPassword){
-                                    return true;
+                                    $file = new filecontroller();
+                                    if($file->checkfile()){
+                                        $location = __DIR__."/../views/images/";
+                                        // var_dump($this->checkfile());
+                                        $encode = md5(rand(2,200));
+                                        $filename = $encode.$file->checkfile()['file_name'];
+                                        if(move_uploaded_file($file->checkfile()["file_tmp"],$location.$filename)){ 
+                                            return true;
+                                            
+                                        } else{
+                                            throw new Exception("error occured while uploading file");
+                                        }
+                                    }
                                 } else{
                                     throw new Exception("password does not match");
                                 }

@@ -18,6 +18,7 @@ class userModel extends DbConnection{
         $level = $signUpDetails['level'];
         $matricNo = $signUpDetails['matric-no'];
         $password = $signUpDetails['password'];
+        $userImage = $signUpDetails['user-image'];
     
 
         $statement = "INSERT INTO user_details (
@@ -28,7 +29,8 @@ class userModel extends DbConnection{
             matric_number,
             student_level,
             email,
-            user_password
+            user_password,
+            user_image
         )
 
         VALUES (
@@ -39,7 +41,8 @@ class userModel extends DbConnection{
             '$matricNo',
             '$level',
             '$email',
-            '$password'
+            '$password',
+            '$userImage'
         )
 
         ";
